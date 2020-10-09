@@ -1,0 +1,72 @@
+@charset "utf-8"; //设置中文字符
+$t:text-decoration;
+$n:none;
+$defaultColor: #333;
+body,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+input,
+form,
+figure,
+figcaption {
+    margin: 0px;
+    margin: 0;
+}
+
+ul,
+li,
+ol {
+    list-style: $n;
+    margin: 0px;
+    padding: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b {
+    font-weight: normal;
+}
+
+
+/* 清除点击出现虚拟框 */
+
+a {
+    outline: $n;
+    #{$t}: $n;
+    color: rgba(0, 0, 0, 0);
+    &:focus {
+        outline: 0;
+    }
+    &:link,
+    &:visited {
+        color: $defaultColor;
+        $t: $n;
+    }
+}
+
+a img {
+    border: $n;
+    vertical-align: middle;
+}
+
+input,
+textarea,
+select {
+    outline: $n;
+}
+
+body {
+    height: 3000px;
+}

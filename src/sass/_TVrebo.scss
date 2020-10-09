@@ -1,0 +1,227 @@
+@charset "utf-8"; //设置中文字符
+$container_width:1190px;
+$bac_color:#fff;
+$font_color:#333;
+$font-size:12px;
+$t:text-decoration;
+$n:none;
+.left {
+    float: left;
+}
+
+%clearfix:after {
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+@mixin link($color:#333, $hovercl:#666, $td:none) {
+    color: $color;
+    &:hover {
+        color: $hovercl;
+        #{$t}: $td;
+    }
+}
+
+@mixin postion($direction:left, $positionvalue:absolute, $value1:10px, $value2:10px) {
+    @if ($direction==left) {
+        position: $positionvalue;
+        left: $value1;
+        top: $value2;
+    }
+    @else {
+        position: $positionvalue;
+        right: $value1;
+        bottom: $value2;
+    }
+}
+
+@mixin border($path, $size: 1px, $type: solid, $color: #000) {
+    @if $path==all {
+        border: $size $type $color;
+    }
+    @else {
+        border-#{$path}: $size $type $color;
+    }
+}
+
+@mixin shadow($shadowx:1px, $shadowy:1px, $shadowz:1px, $shadowcl:#000) {
+    -webkit-box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+    -moz-box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+    box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+}
+
+
+/* 主播推荐 */
+
+.TVrebo {
+    padding-top: 20px;
+}
+
+.zhubo {
+    @extend %clearfix;
+    .title {
+        font-size: 24px;
+        color: #424242;
+        padding-left: 10px;
+        padding-bottom: 13px;
+        span {
+            margin-left: 30px;
+            font-size: 16px;
+            color: #727272;
+        }
+    }
+    .leftcontent {
+        float: left;
+        height: auto;
+        margin-right: 20px;
+        width: 418px;
+        border: 1px solid #e8e6e6;
+        background-color: #ffffff;
+        position: relative;
+        .lunbo {
+            width: 100%;
+            text-align: center;
+            .pic {
+                img {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            .slick-prev {
+                width: 27px;
+                height: 43px;
+                position: absolute;
+                top: 50%;
+                margin-top: -21px;
+                left: -1px;
+                background-color: #ffffff;
+                z-index: 9999;
+                border: 1px solid #c1c1c1;
+                cursor: pointer;
+                overflow: hidden;
+                .jtL {
+                    position: absolute;
+                    width: 13px;
+                    height: 21px;
+                    top: 11px;
+                    left: 5px;
+                    font-size: 0;
+                    background-image: url(../images/leftjiantou.png)
+                }
+                .buttonL {
+                    text-align: left;
+                    position: absolute;
+                    top: 13px;
+                    left: 30px;
+                    font-size: 14px;
+                    span {
+                        color: #f12e24;
+                    }
+                }
+            }
+            .slick-next {
+                width: 27px;
+                height: 43px;
+                position: absolute;
+                top: 50%;
+                margin-top: -21px;
+                right: -1px;
+                background-color: #ffffff;
+                z-index: 9999;
+                border: 1px solid #c1c1c1;
+                cursor: pointer;
+                overflow: hidden;
+                .jtR {
+                    position: absolute;
+                    width: 13px;
+                    height: 21px;
+                    top: 11px;
+                    right: 5px;
+                    font-size: 0;
+                    background-image: url(../images/rightjiantou.png);
+                }
+                .buttonR {
+                    text-align: right;
+                    position: absolute;
+                    top: 13px;
+                    right: 30px;
+                    font-size: 14px;
+                    span {
+                        color: #f12e24;
+                    }
+                }
+            }
+        }
+        .discription {
+            font-size: 14px;
+            color: #2c2c2c;
+            text-align: left;
+            padding: 8px 0 8px 5px;
+            font-weight: bold;
+        }
+        .price {
+            font-size: 16px;
+            color: #ea0505;
+            text-align: left;
+            padding: 8px 0 0 0;
+            font-weight: bold;
+            font-family: "Arial";
+        }
+        .tuijian {
+            padding: 15px 15px 24px;
+            border-top: 1px dotted #b2b2b2;
+            margin-top: 20px;
+            h3 {
+                color: #2c2c2c;
+                font-size: 15px;
+                font-weight: bold;
+                margin-bottom: 15px;
+            }
+            p {
+                padding: 15px;
+                border: 1px solid #b2b2b2;
+                background-color: #f7f7f7;
+            }
+        }
+    }
+    .rightcontent {
+        float: left;
+        position: relative;
+        width: 748px;
+        height: 667px;
+        .margin_top {
+            margin-top: 20px;
+        }
+        li {
+            float: left;
+            border: 1px solid #e8e6e6;
+            width: 220px;
+            height: 308px;
+            padding: 8px;
+            background: #ffffff;
+            margin-right: 17px;
+            h3 {
+                line-height: 18px;
+                height: 36px;
+                margin: 12px 0 8px 0;
+                padding: 0 0 0 5px;
+                overflow: hidden;
+                font-size: 14px;
+            }
+            p {
+                font-size: 16px;
+                color: #ea0505;
+                text-align: left;
+                padding: 8px 0 0 0;
+                font-weight: bold;
+                font-family: "Arial";
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@charset "utf-8"; //设置中文字符
+
+/*公共样式*/
+
+@import "comment";
+
+/* 头部样式 */
+
+@import "headerConent";
+
+/* 主体展示样式 */
+
+@import "displayConent";
+
+/*尾部样式*/
+
+@import "footerConent";

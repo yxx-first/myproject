@@ -1,0 +1,480 @@
+@charset "utf-8"; //设置中文字符
+
+/* 头部Nav部分 */
+
+$container_width:1190px;
+$bac_color:#f12e24;
+$font_color:#505966;
+$font-size:12px;
+$t:text-decoration;
+$n:none;
+@mixin link($cl:#333, $hovercl:#666, $td:none) {
+    color: $cl;
+    &:hover {
+        color: $hovercl;
+        #{$t}: $td;
+    }
+}
+
+@mixin postion($direction:left, $positionvalue:absolute, $value1:10px, $value2:10px) {
+    @if ($direction==left) {
+        position: $positionvalue;
+        left: $value1;
+        top: $value2;
+    }
+    @else {
+        position: $positionvalue;
+        right: $value1;
+        bottom: $value2;
+    }
+}
+
+@mixin border($path, $size: 1px, $type: solid, $color: #000) {
+    @if $path==all {
+        border: $size $type $color;
+    }
+    @else {
+        border-#{$path}: $size $type $color;
+    }
+}
+
+@mixin shadow($shadowx:1px, $shadowy:1px, $shadowz:1px, $shadowcl:#000) {
+    -webkit-box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+    -moz-box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+    box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+}
+
+%clearfix:after {
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+.container {
+    @extend %clearfix;
+    width: $container_width;
+    margin: 0 auto;
+    background-color: pink;
+}
+
+.nav {
+    width: 100%;
+    background-color: #f6f6f6;
+    @include border(bottom, 1px, solid, #d9d9d7);
+    height: 32px;
+    font-size: $font-size;
+    color: $font_color;
+    .nav_left {
+        float: left;
+        &>span:first-child {
+            margin-left: 19px;
+            margin-right: 14px;
+        }
+        span {
+            padding: 0 3px;
+            line-height: 32px;
+            float: left;
+        }
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    .nav_right {
+        float: right;
+        margin-left: 4px;
+        &>span {
+            padding: 0 5px;
+            float: right;
+            line-height: 32px;
+            height: 32px;
+        }
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .myshop {
+            float: right;
+            height: 32px;
+            line-height: 32px;
+            width: 100px;
+            margin-left: 1px;
+            color: #505966;
+            @include postion(left, relative, 0, 0);
+            b:hover {
+                text-decoration: underline;
+            }
+            dl:hover {
+                dt {
+                    background-color: #fff;
+                    @include border(all, 1px, solid, #d9d9d9);
+                    border-bottom: none;
+                }
+                .myshop_more {
+                    display: block;
+                    border-top: 0;
+                    z-index: 100001;
+                }
+            }
+            dt {
+                @include postion(left, absolute, 0, 0);
+                z-index: 2;
+                width: 92px;
+                height: 25px;
+                @include border(all, 1px, solid, #f6f6f6);
+                background-color: #f6f6f6;
+                line-height: 25px;
+                padding-left: 6px;
+            }
+            .myshop_more {
+                display: none;
+                @include postion(left, absolute, 0px, 26px);
+                @include border(all, 1px, solid, #d9d9d9);
+                background-color: #fff;
+                @include shadow(0, 0, 10px, rgba(0, 0, 0, .12));
+                z-index: 1;
+                width: 98px;
+                height: 133px;
+                ul {
+                    width: 98px;
+                    height: auto;
+                    li {
+                        height: 25px;
+                        line-height: 25px;
+                        width: 100%;
+                        text-align: center;
+                        a {
+                            @include link(#505966, #239cdc, underline);
+                        }
+                    }
+                }
+            }
+        }
+        .weixin {
+            float: right;
+            margin-left: 1px;
+            color: #333;
+            height: 32px;
+            line-height: 32px;
+            width: 70px;
+            padding-left: 12px;
+            position: relative;
+            dl:hover {
+                dt {
+                    background-color: #fff;
+                    @include border(all, 1px, solid, #d9d9d9);
+                    border-bottom: 0;
+                    z-index: 100002;
+                }
+                .weixin_pic {
+                    display: block;
+                    z-index: 100001;
+                }
+            }
+            dt {
+                position: absolute;
+                z-index: 2;
+                width: 70px;
+                height: 32px;
+                box-sizing: border-box;
+                @include border(all, 1px, solid, #f6f6f6);
+                background-color: #f6f6f6;
+                padding-left: 12px;
+            }
+            .weixin_pic {
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 30px;
+                @include border(all, 1px, solid, #d9d9d9);
+                background-color: #fff;
+                @include shadow(0, 0, 10px, rgba(0, 0, 0, .12));
+                z-index: 6;
+                width: 248px;
+                p {
+                    color: #7d8289;
+                    font-size: 12px;
+                    padding-top: 15px;
+                    text-align: center;
+                }
+                div {
+                    color: #7d8289;
+                    font-size: 12px;
+                    padding-bottom: 13px;
+                    text-align: center;
+                    margin: 0;
+                    line-height: 1.5;
+                    li {
+                        color: rgb(163, 0, 0);
+                    }
+                }
+                img {
+                    width: 222px;
+                    height: 222px;
+                    display: block;
+                    padding: 0 13px;
+                }
+            }
+        }
+    }
+}
+
+.area {
+    float: left;
+    font-size: $font-size;
+    line-height: 32px;
+    margin-left: 4px;
+    dt {
+        position: absolute;
+        z-index: 2;
+        height: 22px;
+        border: 1px solid #f6f6f6;
+        background-color: #f6f6f6;
+        span {
+            &:first-child {
+                b {
+                    font-weight: bolder;
+                }
+            }
+            &:nth-child(2) {
+                @include link(#333, #239cdc, underline)
+            }
+        }
+    }
+}
+
+
+/* 头部logo部分 */
+
+.logo {
+    background: #fff;
+    height: 82px;
+    margin-top: 10px;
+    .container {
+        @extend %clearfix;
+    }
+    .container>a {
+        display: block;
+        float: left;
+        height: auto;
+        width: 140px;
+        padding: 0;
+        text-align: right;
+        margin-right: 30px;
+        margin-left: 10px;
+    }
+    .logo_slider {
+        width: 210px;
+        height: 70px;
+        overflow: hidden;
+        position: relative;
+        float: left;
+        margin: 6px 0 0 0;
+    }
+    .search {
+        width: 450px;
+        height: 70px;
+        padding: 12px 0 0 41px;
+        float: left;
+    }
+    .mycar {
+        float: left;
+        padding-left: 17px;
+        position: relative;
+        width: 120px;
+        height: 40px;
+        margin-top: 12px;
+        z-index: 100000;
+    }
+    .logo_right {
+        float: left;
+        margin-left: 17px;
+        width: 140px;
+        margin-top: -2px;
+    }
+}
+
+.logo_slider {
+    a {
+        display: block;
+        width: 210px;
+        height: 70px;
+        position: absolute;
+    }
+}
+
+.search {
+    .search_bar {
+        width: 444px;
+        height: 34px;
+        @include border(all, 3px, solid, #f12e24);
+        position: relative;
+        z-index: 100000;
+        form {
+            input {
+                float: left;
+                width: 367px;
+                height: 34px;
+                line-height: 34px;
+                text-indent: 8px;
+                border: none;
+                padding: 0;
+                color: #9da6ab;
+            }
+            button {
+                float: left;
+                background: #f12e24;
+                width: 77px;
+                height: 34px;
+                border: none;
+                color: #fff;
+                font-size: 16px;
+                line-height: 32px;
+                font-weight: bold;
+                text-align: center;
+                font-family: 'Microsoft YaHei';
+                cursor: pointer;
+            }
+        }
+    }
+    .search_down {
+        height: 40px;
+        width: 450px;
+        font-size: 12px;
+        a:hover {
+            text-decoration: underline;
+        }
+        span {
+            float: right;
+            margin-top: 5px;
+            display: block;
+            height: 18px;
+            line-height: 18px;
+            padding-left: 23px;
+            background: url(../images/bg.site.nav.png) -8px -660px no-repeat;
+            margin-right: 0;
+            a {
+                color: #505966;
+                font-weight: bold;
+            }
+        }
+        ul {
+            width: 361px;
+            height: 28px;
+            line-height: 28px;
+            float: left;
+            overflow: hidden;
+            li {
+                float: left;
+                margin-right: 8px;
+                margin-left: 3px;
+                line-height: 28px;
+                height: 28px;
+            }
+        }
+    }
+}
+
+.mycar {
+    dl:hover {
+        dt {
+            background-color: #fff;
+            @include border(all, 1px, solid, #d9d9d9);
+            border-bottom: 0;
+            padding-bottom: 2px;
+        }
+        dd {
+            display: block;
+        }
+    }
+    dt {
+        position: absolute;
+        z-index: 1;
+        width: 120px;
+        height: 40px;
+        @include border(all, 1px, solid, #EFEFEF);
+        background-color: #F7F7F7;
+        cursor: pointer;
+        .shopping {
+            @include postion(left, absolute, 24px, -8px);
+            display: block;
+            width: 20px;
+            height: 20px;
+            line-height: 19px;
+            background-image: url(../images/iconbgred.png);
+            color: #fff;
+            text-align: center;
+        }
+        .icon-shangcheng {
+            color: #d0d0d0;
+            font-size: 30px;
+            vertical-align: -7px;
+            padding: 0 9px 0 14px;
+        }
+        a {
+            color: #505966;
+            line-height: 38px;
+            font-size: 12px;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    dd {
+        display: none;
+        position: absolute;
+        top: 42px;
+        right: -2px;
+        width: 308px;
+        background: #fff;
+        @include border(all, 1px, solid, #d9d9d9);
+        @include shadow(0, 0, 10px, rgba(0, 0, 0, .12));
+        .car_empty {
+            p {
+                padding-left: 58px;
+                height: 49px;
+                line-height: 49px;
+                overflow: hidden;
+                color: #999;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+/* menu部分 */
+
+.cur {
+    background: #b8362f;
+}
+
+.menu {
+    height: 34px;
+    width: 100%;
+    position: relative;
+    z-index: 99999;
+    background: #f12e24;
+    overflow: visible;
+    a {
+        display: block;
+        font-weight: bold;
+        color: #fff;
+        font-size: 15px;
+        float: left;
+        height: 34px;
+        line-height: 34px;
+        position: relative;
+        z-index: 1;
+        padding: 0 19px;
+        text-align: center;
+        font-family: 'Microsoft YaHei';
+        &:hover {
+            background-color: #b8362f;
+        }
+    }
+}

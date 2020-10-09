@@ -1,0 +1,430 @@
+@charset "utf-8"; //设置中文字符
+$container_width:1190px;
+$bac_color:#fff;
+$font_color:#333;
+$font-size:12px;
+$t:text-decoration;
+$n:none;
+.left {
+    float: left;
+}
+
+%clearfix:after {
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+@mixin link($color:#333, $hovercl:#666, $td:none) {
+    color: $color;
+    &:hover {
+        color: $hovercl;
+        #{$t}: $td;
+    }
+}
+
+@mixin postion($direction:left, $positionvalue:absolute, $value1:10px, $value2:10px) {
+    @if ($direction==left) {
+        position: $positionvalue;
+        left: $value1;
+        top: $value2;
+    }
+    @else {
+        position: $positionvalue;
+        right: $value1;
+        bottom: $value2;
+    }
+}
+
+@mixin border($path, $size: 1px, $type: solid, $color: #000) {
+    @if $path==all {
+        border: $size $type $color;
+    }
+    @else {
+        border-#{$path}: $size $type $color;
+    }
+}
+
+@mixin shadow($shadowx:1px, $shadowy:1px, $shadowz:1px, $shadowcl:#000) {
+    -webkit-box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+    -moz-box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+    box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+}
+
+
+/* banner样式 */
+
+.banner {
+    background-color: #f7f7f7;
+    position: relative;
+    height: 590px;
+    font-size: $font-size;
+    .banner_left {
+        float: left;
+        position: relative;
+        width: 220px;
+        height: 100%;
+        background-image: url(../images/tcfff.png);
+        @include border(right, 1px, solid, #e0dfdf);
+        z-index: 19;
+        &>div {
+            width: 205px;
+            height: 39px;
+            padding: 0 0 0 15px;
+            position: relative;
+            cursor: pointer;
+            line-height: 39px;
+            .iconfont {
+                font-size: 22px;
+                position: relative;
+                z-index: 1002;
+                margin-right: 8px;
+                top: 1px;
+                color: rgb(51, 51, 51);
+            }
+            &:nth-child(2) {
+                color: #414040;
+                font-size: 13px;
+                margin-right: 15px;
+                z-index: 1002;
+                line-height: 39px;
+                top: 0;
+                position: relative;
+                width: auto;
+                a {
+                    color: rgb(51, 51, 51);
+                }
+            }
+        }
+        .leftnavbg {
+            background-image: url(../images/leftnavbg.png);
+            background-repeat: no-repeat;
+            padding: 0;
+            width: 220px;
+            height: 40px;
+            z-index: 1003;
+            .indexLeftNavBoxContent {
+                width: 200px;
+                height: 39px;
+                margin: 0 auto;
+                border-bottom: 1px dotted #bdbdbd;
+                vertical-align: middle;
+                line-height: 39px;
+                text-align: left;
+                img {
+                    height: 22px;
+                    width: auto;
+                    margin-left: 39px;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+    .banner_right {
+        float: left;
+        position: relative;
+        width: 969px;
+        height: 100%;
+        .live-box {
+            width: 100%;
+            height: 90px;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+            background-color: #f7f7f7;
+            .live-box-middle {
+                @include border(all, 1px, solid, #dbdbdb);
+                margin: 4px 0 0 5px;
+            }
+            .live-box-right {
+                margin: 22px 0 0 4px;
+                width: 112px;
+                height: 48px;
+            }
+        }
+        .hplay {
+            position: relative;
+            width: 60px;
+            height: 40px;
+            cursor: pointer;
+            margin-left: 5px;
+            margin-top: 4px;
+            text-align: center;
+            line-height: 40px;
+            background: url(../images/channelchange.png) no-repeat;
+            .zhezhao {
+                width: 50px;
+                height: 10px;
+                position: absolute;
+                top: 40px;
+                right: 0;
+                line-height: 0;
+            }
+        }
+        .hplay-right {
+            overflow: hidden;
+            padding-top: 4px;
+            background-color: #ffffff;
+            border: 1px solid #e2e2e2;
+            width: 391px;
+            height: 74px;
+            margin-top: 4px;
+            position: relative;
+            margin-left: -1px;
+            .pic {
+                width: 100px;
+                height: 70px;
+                margin: 0 0 0 4px;
+                float: left;
+                overflow: hidden;
+                position: relative;
+                span {
+                    display: block;
+                    width: 33px;
+                    height: 33px;
+                    @include postion(left, absolute, 50%, 50%);
+                    margin-top: -16px;
+                    margin-left: -16px;
+                    background: url(../images/bg.header.play.btn.png);
+                }
+                img {
+                    width: 90px;
+                    height: 90px;
+                }
+            }
+            .pic-right {
+                .timer {
+                    position: relative;
+                    padding-right: 18px;
+                    span {
+                        position: absolute;
+                        top: 50%;
+                        margin-top: -8px;
+                        right: 18px;
+                    }
+                }
+                p {
+                    font-size: 13px;
+                    line-height: 16px;
+                    @include link(#31363c, #239cdc, underline);
+                }
+                .price {
+                    @extend %clearfix;
+                    width: 260px;
+                    position: relative;
+                    margin-top: 6px;
+                    p {
+                        color: #ea0505;
+                        padding-top: 2px;
+                        float: left;
+                        margin: 0;
+                        text-align: left;
+                        b {
+                            font-size: 14px;
+                        }
+                    }
+                    .jifen {
+                        float: left;
+                        text-align: right;
+                        margin-left: 10px;
+                        margin-top: 3px;
+                        span:first-child {
+                            margin: 0 0 0 1px;
+                            padding: 0px 2px 0px 2px;
+                            font-size: 12px;
+                            color: #ffffff;
+                            font-family: "Microsoft Yahei", "Arial";
+                            background-color: #ff8400;
+                        }
+                        span:last-child {
+                            color: #ff8400;
+                            padding: 0 0 0 0;
+                            margin: 0 0 0 5px;
+                            position: relative;
+                            top: 2px;
+                        }
+                    }
+                    a {
+                        @include postion(right, absolute, 12px, -3px);
+                        color: #f22d25;
+                        width: 84px;
+                        height: 22px;
+                        line-height: 21px;
+                        @include border(all, 1px, solid, #f22d25);
+                        text-align: center;
+                        @include shadow(1px, 1px, 2px, #e3d5d5);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.live-box-down {
+    width: 969px;
+    height: 500px;
+    .banner-lunbo {
+        width: 100%;
+        height: 100%;
+        @include postion(left, absolute, 0, 90px);
+        z-index: 2;
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.lunbo-container {
+    width: 1920px;
+    height: 500px;
+    position: absolute;
+    left: -600px;
+    // overflow: hidden;
+    .lunbo-all-content {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        // width: 15360px;
+        .lunbo-all-connent-list {
+            position: relative;
+            .item-container {
+                position: absolute;
+                top: 0;
+                right: 350px;
+                z-index: 9;
+                .juchiyo {
+                    font-size: 0;
+                    height: 6px;
+                    overflow: hidden;
+                    background-image: url(../images/xiaojiantou.png);
+                    width: 100%;
+                    position: absolute;
+                    top: 166px;
+                    left: 0;
+                    z-index: 10;
+                }
+                .item {
+                    width: 250px;
+                    height: 245px;
+                    margin-bottom: 10px;
+                    position: relative;
+                    .item-img {
+                        width: 100%;
+                        height: auto;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                    .item-text {
+                        background-color: #ffffff;
+                        padding: 10px 0 10px 0;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 53px;
+                        h3 {
+                            font-size: 16px;
+                            color: #2c2c2c;
+                            text-align: center;
+                            padding: 2px 0 8px 0;
+                            font-weight: bold
+                        }
+                        p {
+                            font-size: 14px;
+                            color: #2c2c2c;
+                            text-align: center;
+                            padding: 4px 0 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .slick-prev {
+        width: 27px;
+        height: 43px;
+        @include postion(left, absolute, 605px, 50%);
+        margin-top: -21px;
+        background-color: #ffffff;
+        z-index: 9999;
+        @include border(all, 1px, solid, #c1c1c1);
+        cursor: pointer;
+        overflow: hidden;
+        .jiantouL {
+            position: absolute;
+            width: 13px;
+            height: 21px;
+            top: 11px;
+            left: 5px;
+            font-size: 0;
+            background-image: url(../images/leftjiantou.png);
+        }
+        .slickL {
+            text-align: left;
+            position: absolute;
+            top: 13px;
+            left: 30px;
+            font-size: 14px;
+            span {
+                color: #f12e24;
+            }
+        }
+    }
+    .slick-next {
+        width: 27px;
+        height: 43px;
+        @include postion(right, absolute, 605px, 50%);
+        margin-bottom: -21px;
+        background-color: #ffffff;
+        z-index: 9999;
+        @include border(all, 1px, solid, #c1c1c1);
+        cursor: pointer;
+        overflow: hidden;
+        .jiantouR {
+            position: absolute;
+            width: 13px;
+            height: 21px;
+            top: 11px;
+            left: 5px;
+            font-size: 0;
+            background-image: url(../images/rightjiantou.png);
+        }
+        .slickR {
+            text-align: left;
+            position: absolute;
+            top: 13px;
+            left: 30px;
+            font-size: 14px;
+            span {
+                color: #f12e24;
+            }
+        }
+    }
+    ul {
+        position: absolute;
+        bottom: 2%;
+        display: block;
+        width: 100%;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        z-index: 9999;
+        li {
+            position: relative;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 2px;
+            padding: 0;
+            cursor: pointer;
+            border-radius: 20px;
+            overflow: hidden;
+            background-color: #ccc;
+        }
+    }
+}
