@@ -1,0 +1,130 @@
+@charset "utf-8"; //设置中文字符
+$container_width:1190px;
+$bac_color:#fff;
+$font_color:#333;
+$font-size:12px;
+$t:text-decoration;
+$n:none;
+.left {
+    float: left;
+}
+
+%clearfix:after {
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+@mixin link($color:#333, $hovercl:#666, $td:none) {
+    color: $color;
+    &:hover {
+        color: $hovercl;
+        #{$t}: $td;
+    }
+}
+
+@mixin postion($direction:left, $positionvalue:absolute, $value1:10px, $value2:10px) {
+    @if ($direction==left) {
+        position: $positionvalue;
+        left: $value1;
+        top: $value2;
+    }
+    @else {
+        position: $positionvalue;
+        right: $value1;
+        bottom: $value2;
+    }
+}
+
+@mixin border($path, $size: 1px, $type: solid, $color: #000) {
+    @if $path==all {
+        border: $size $type $color;
+    }
+    @else {
+        border-#{$path}: $size $type $color;
+    }
+}
+
+@mixin shadow($shadowx:1px, $shadowy:1px, $shadowz:1px, $shadowcl:#000) {
+    -webkit-box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+    -moz-box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+    box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+}
+
+
+/* love部分 */
+
+.love {
+    margin-bottom: 30px;
+    .love-title {
+        font-size: 24px;
+        color: #424242;
+        padding-left: 10px;
+        padding-bottom: 11px;
+        margin-bottom: 10px;
+        position: relative;
+        .moreproduct {
+            padding: 3px 15px;
+            border: 1px solid #dbdbdb;
+            position: absolute;
+            background: #ffffff;
+            right: 0;
+            left: auto;
+            bottom: 9px;
+            top: auto;
+            font-size: 12px;
+        }
+    }
+    .love-list {
+        margin-top: 8px;
+        .love-item {
+            padding: 4px;
+            width: 220px;
+            margin-right: 10px;
+            border: 1px solid #e8e6e6;
+            float: left;
+            position: relative;
+            .love-img {
+                width: 100%;
+                height: auto;
+                position: relative;
+                text-align: center;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .love-title {
+                line-height: 18px;
+                height: 36px;
+                margin: 4px 0 3px 0;
+                padding: 0 0 0 5px;
+                overflow: hidden;
+                font-size: 14px;
+                color: #2c2c2c;
+                text-align: left;
+            }
+            .love-price {
+                font-size: 16px;
+                color: #ea0505;
+                text-align: left;
+                padding: 8px 0 0 0;
+                font-weight: bold;
+                font-family: "Arial";
+                padding-top: 2px;
+                span {
+                    color: #ea0505;
+                    font-size: 14px;
+                }
+                del {
+                    color: #bbbbbb;
+                    font-size: 12px;
+                    margin-left: 6px;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+}

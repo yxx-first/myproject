@@ -1,0 +1,227 @@
+@charset "utf-8"; //设置中文字符
+$container_width:1190px;
+$bac_color:#fff;
+$font_color:#333;
+$font-size:12px;
+$t:text-decoration;
+$n:none;
+.left {
+    float: left;
+}
+
+%clearfix:after {
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+@mixin link($color:#333, $hovercl:#666, $td:none) {
+    color: $color;
+    &:hover {
+        color: $hovercl;
+        #{$t}: $td;
+    }
+}
+
+@mixin postion($direction:left, $positionvalue:absolute, $value1:10px, $value2:10px) {
+    @if ($direction==left) {
+        position: $positionvalue;
+        left: $value1;
+        top: $value2;
+    }
+    @else {
+        position: $positionvalue;
+        right: $value1;
+        bottom: $value2;
+    }
+}
+
+@mixin border($path, $size: 1px, $type: solid, $color: #000) {
+    @if $path==all {
+        border: $size $type $color;
+    }
+    @else {
+        border-#{$path}: $size $type $color;
+    }
+}
+
+@mixin shadow($shadowx:1px, $shadowy:1px, $shadowz:1px, $shadowcl:#000) {
+    -webkit-box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+    -moz-box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+    box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+}
+
+
+/* 商城优选部分 */
+
+.bestshop {
+    .bestshop-title {
+        font-size: 24px;
+        color: #424242;
+        padding-left: 10px;
+        padding-bottom: 11px;
+        border-bottom: 1px solid #424242;
+        margin-bottom: 10px;
+        position: relative;
+        .moreproduct {
+            padding: 3px 15px;
+            border: 1px solid #dbdbdb;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #ffffff;
+            right: 0;
+            left: auto;
+            bottom: 9px;
+            top: auto;
+            font-size: 12px;
+        }
+    }
+    .allitem {
+        .bestshop-item {
+            width: 590px;
+            float: left;
+            margin-top: 10px;
+            .bestshop-item-top {
+                height: 145px;
+                .logoimg {
+                    float: left;
+                    position: relative;
+                    width: 250px;
+                    &>a:first-child {
+                        display: block;
+                        position: relative;
+                        width: 250px;
+                        height: 145px;
+                        img {
+                            vertical-align: middle;
+                        }
+                    }
+                    .radiousbox {
+                        position: absolute;
+                        width: 90%;
+                        top: 68px;
+                        text-align: center;
+                        margin: 1% 5%;
+                        text-decoration: none;
+                        &>a {
+                            display: inline-block;
+                            padding: 10px 3%;
+                            text-align: center;
+                            font-size: 16px;
+                            color: #1c4976;
+                            text-decoration: none;
+                            border: 1px solid #1c4976;
+                            border-radius: 15px;
+                        }
+                    }
+                    &>a:last-child {
+                        position: absolute;
+                        top: 24px;
+                        width: 100%;
+                        text-align: center;
+                        color: #000;
+                        font-size: 20px;
+                        font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+                    }
+                }
+                .logoproduct {
+                    float: left;
+                    position: relative;
+                    width: 340px;
+                    height: 145px;
+                    background-color: #e9ecf0;
+                    &>a {
+                        float: right;
+                        margin-right: 15px;
+                        margin-top: 15px;
+                        img {
+                            width: 117px;
+                            height: 117px;
+                            vertical-align: middle;
+                        }
+                    }
+                    .productinfo {
+                        float: right;
+                        width: 170px;
+                        margin-right: 15px;
+                        margin-top: 40px;
+                        h3 {
+                            line-height: 18px;
+                            height: 36px;
+                            padding: 0 0 0 5px;
+                            overflow: hidden;
+                            font-size: 14px;
+                            color: #2c2c2c;
+                            text-align: left;
+                            word-break: break-all;
+                        }
+                        p {
+                            display: inline-block;
+                            font-size: 16px;
+                            color: #ea0505;
+                            text-align: left;
+                            font-weight: bold;
+                            font-family: "Arial";
+                            margin-left: 4px;
+                            margin-top: 5px;
+                            span {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+            .bestshop-item-bottom {
+                @extend %clearfix;
+                background-color: #fff;
+                padding: 20px 0 10px 0;
+                .listitem {
+                    width: 170px;
+                    float: left;
+                    margin: 0 13px;
+                    padding-bottom: 30px;
+                    position: relative;
+                    .listitemimg {
+                        img {
+                            width: 170px;
+                            height: 170px;
+                            vertical-align: middle;
+                        }
+                    }
+                    .listitemtext {
+                        width: 170px;
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        background: rgba(255, 255, 255, 0.8);
+                        h3 {
+                            line-height: 18px;
+                            height: 36px;
+                            padding: 5px 10px 0 10px;
+                            overflow: hidden;
+                            font-size: 14px;
+                            color: #2c2c2c;
+                            text-align: left;
+                            word-break: break-all;
+                        }
+                        p {
+                            text-align: center;
+                            font-size: 16px;
+                            color: #ea0505;
+                            font-weight: bold;
+                            font-family: "Arial";
+                            margin-top: 5px;
+                            span: {
+                                font-size: 14px;
+                            }
+                            ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

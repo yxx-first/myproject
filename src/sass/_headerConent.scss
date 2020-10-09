@@ -56,7 +56,7 @@ $n:none;
     @extend %clearfix;
     width: $container_width;
     margin: 0 auto;
-    background-color: pink;
+    // background-color: pink;
 }
 
 .nav {
@@ -243,6 +243,87 @@ $n:none;
             &:nth-child(2) {
                 @include link(#333, #239cdc, underline)
             }
+        }
+    }
+}
+
+.slidbar {
+    position: fixed;
+    width: 84px;
+    bottom: 10px;
+    background-color: #c7c5eb;
+    z-index: 200000;
+    right: 50%;
+    margin-right: -690px;
+    .slidbar-window {
+        position: relative;
+        width: 80px;
+        height: 130px;
+        overflow: hidden;
+        background-color: #ffffff;
+        ul {
+            position: absolute;
+            bottom: 2%;
+            display: block;
+            width: 100%;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            z-index: 9999;
+            li {
+                position: relative;
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                margin: 0 2px;
+                padding: 0;
+                cursor: pointer;
+                border-radius: 20px;
+                overflow: hidden;
+                background-color: #ccc;
+            }
+        }
+    }
+    .floor-list {
+        margin-top: 11px;
+        .floor-list-content {
+            width: 100%;
+            background-color: #ffffff;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            color: #3c3c3c;
+            cursor: pointer;
+            font-size: 12px;
+        }
+    }
+    .server {
+        width: 84px;
+        height: auto;
+        box-shadow: 1px 2px 0 rgba(242, 242, 242, 1);
+        .bird {
+            border-top: 1px dotted #d3d3d3;
+            width: 100%;
+            height: 22px;
+            padding-top: 55px;
+            text-align: center;
+            background: #fff url(../images/bg.site.nav.png) 16px -539px no-repeat;
+            a {
+                text-align: center;
+                color: #5c686e;
+                font-size: 12px;
+            }
+        }
+        .gotop {
+            width: 84px;
+            height: 30px;
+            background: #4b4c50 url(../images/bg.site.nav.png) -1px -604px no-repeat;
+            color: #fff;
+            font-weight: bold;
+            text-indent: 23px;
+            line-height: 30px;
+            cursor: pointer;
+            font-size: 12px;
         }
     }
 }
@@ -453,7 +534,7 @@ $n:none;
     background: #b8362f;
 }
 
-.menu {
+.headerConent .menu {
     height: 34px;
     width: 100%;
     position: relative;

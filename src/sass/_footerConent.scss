@@ -1,0 +1,196 @@
+@charset "utf-8"; //设置中文字符
+$container_width:1190px;
+$bac_color:#fff;
+$font_color:#333;
+$font-size:12px;
+$t:text-decoration;
+$n:none;
+.left {
+    float: left;
+}
+
+%clearfix:after {
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+@mixin link($color:#333, $hovercl:#666, $td:none) {
+    color: $color;
+    &:hover {
+        color: $hovercl;
+        #{$t}: $td;
+    }
+}
+
+@mixin postion($direction:left, $positionvalue:absolute, $value1:10px, $value2:10px) {
+    @if ($direction==left) {
+        position: $positionvalue;
+        left: $value1;
+        top: $value2;
+    }
+    @else {
+        position: $positionvalue;
+        right: $value1;
+        bottom: $value2;
+    }
+}
+
+@mixin border($path, $size: 1px, $type: solid, $color: #000) {
+    @if $path==all {
+        border: $size $type $color;
+    }
+    @else {
+        border-#{$path}: $size $type $color;
+    }
+}
+
+@mixin shadow($shadowx:1px, $shadowy:1px, $shadowz:1px, $shadowcl:#000) {
+    -webkit-box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+    -moz-box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+    box-shadow: $shadowx $shadowy $shadowz $shadowcl;
+}
+
+.gfooter {
+    padding-top: 30px;
+    .footer-menu {
+        @extend %clearfix;
+        .menu-left {
+            float: left;
+            width: 838px;
+            .menu {
+                width: 838px;
+                height: 184px;
+                margin-top: -15px;
+                .list {
+                    width: 115px;
+                    float: left;
+                    margin-left: 20px;
+                    .title-1 {
+                        margin: 0 auto 11px auto;
+                        width: 30px;
+                        height: 29px;
+                        background-image: url(../images/newflootimg0.png);
+                    }
+                    .title-3 {
+                        width: 33px;
+                        height: 33px;
+                        background-image: url(../images/newflootimg2.png);
+                        margin: 0 auto 11px auto;
+                    }
+                    ul {
+                        float: right;
+                        width: 83px;
+                        margin-left: 31px;
+                        .title {
+                            font-size: 14px;
+                            font-family: 'Microsoft YaHei';
+                            font-weight: bold;
+                            color: #505966;
+                            height: 25px;
+                        }
+                        li {
+                            height: 20px;
+                            line-height: 20px;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+        .menu-right {
+            float: left;
+            height: 147px;
+            width: 338px;
+            border: 1px solid #d9d9d9;
+            margin-left: 10px;
+            .notice {
+                height: 29px;
+                color: #505966;
+                line-height: 29px;
+                margin: 5px 0;
+                h4 {
+                    float: left;
+                    font-family: 'Microsoft YaHei';
+                    font-size: 14px;
+                    margin-left: 13px
+                }
+                p {
+                    height: 29px;
+                    overflow: hidden;
+                    float: left;
+                    width: 212px;
+                    overflow: hidden;
+                    margin-left: 10px;
+                    a {
+                        color: #239CDC;
+                        font-size: 12px;
+                        display: block;
+                        height: 29px;
+                        width: 212px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                    }
+                }
+                span {
+                    float: left;
+                    margin-left: 12px;
+                    font-size: 12px;
+                    ;
+                }
+            }
+            .notice-bottom {
+                .social {
+                    width: 158px;
+                    height: 87px;
+                    float: left;
+                    margin-left: 9px;
+                }
+            }
+        }
+    }
+    .footer-content {
+        border-top: 3px solid #5c686e;
+        height: auto;
+        margin-top: 10px;
+        padding-top: 20px;
+        position: relative;
+        .logo-dfmz {
+            width: 170px;
+            height: 42px;
+            position: absolute;
+            left: 0;
+            a {
+                display: block;
+            }
+            img {
+                width: 126px;
+                height: 100%;
+            }
+            span {
+                color: #82888b;
+                font-size: 12px;
+            }
+        }
+        .footer-text,
+        .textIntroFooter {
+            text-align: center;
+            color: #82888b;
+            font-size: 12px;
+            padding: 2px 0;
+        }
+        .footer-icon {
+            padding-bottom: 50px;
+            ul {
+                padding: 14px 0;
+                li {
+                    float: left;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
