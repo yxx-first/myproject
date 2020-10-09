@@ -67,7 +67,7 @@ body {
 
 /* 头部样式 */
 /* 头部Nav部分 */
-.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after {
+.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after, .tuangou:after, .quanqiu:after {
   content: '';
   clear: both;
   display: block;
@@ -501,7 +501,7 @@ body {
   float: left;
 }
 
-.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after {
+.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after, .tuangou:after, .quanqiu:after {
   content: '';
   clear: both;
   display: block;
@@ -898,7 +898,7 @@ body {
   float: left;
 }
 
-.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after {
+.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after, .tuangou:after, .quanqiu:after {
   content: '';
   clear: both;
   display: block;
@@ -934,6 +934,7 @@ body {
 .zhubo .leftcontent .lunbo {
   width: 100%;
   text-align: center;
+  position: relative;
 }
 .zhubo .leftcontent .lunbo .pic img {
   width: 100%;
@@ -1003,6 +1004,27 @@ body {
 .zhubo .leftcontent .lunbo .slick-next .buttonR span {
   color: #f12e24;
 }
+.zhubo .leftcontent .lunbo ul {
+  position: absolute;
+  bottom: 2%;
+  display: block;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  z-index: 9999;
+}
+.zhubo .leftcontent .lunbo ul li {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 2px;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: #ccc;
+}
 .zhubo .leftcontent .discription {
   font-size: 14px;
   color: #2c2c2c;
@@ -1070,6 +1092,185 @@ body {
 }
 .zhubo .rightcontent li img {
   width: 100%;
+}
+
+.tuangou .title {
+  font-size: 24px;
+  color: #424242;
+  padding-left: 10px;
+  padding-bottom: 13px;
+  padding-top: 20px;
+}
+.tuangou .title span {
+  margin-left: 30px;
+  font-size: 16px;
+  color: #727272;
+}
+.tuangou .leftcontent {
+  float: left;
+  width: 418px;
+  height: 321px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #e8e6e6;
+  margin-right: 20px;
+}
+.tuangou .leftcontent img {
+  display: block;
+  padding-top: 10px;
+  margin: 0 auto;
+}
+.tuangou .rightcontent {
+  float: left;
+}
+.tuangou .rightcontent ul li {
+  float: left;
+  border: 1px solid #e8e6e6;
+  width: 220px;
+  height: 305px;
+  padding: 8px;
+  background: #ffffff;
+  margin-right: 17px;
+}
+.tuangou .rightcontent ul li img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.quanqiu .title {
+  font-size: 24px;
+  color: #424242;
+  padding-left: 10px;
+  padding-bottom: 13px;
+  padding-top: 20px;
+}
+.quanqiu .title span {
+  margin-left: 30px;
+  font-size: 16px;
+  color: #727272;
+}
+.quanqiu .leftcontent {
+  float: left;
+  width: 418px;
+  height: 321px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #e8e6e6;
+  margin-right: 20px;
+}
+.quanqiu .leftcontent .lunbo {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.quanqiu .leftcontent .lunbo .pic img {
+  width: 100%;
+  text-align: center;
+}
+.quanqiu .leftcontent .lunbo .slick-prev {
+  width: 27px;
+  height: 43px;
+  position: absolute;
+  top: 50%;
+  margin-top: -21px;
+  left: -1px;
+  background-color: #ffffff;
+  z-index: 9999;
+  border: 1px solid #c1c1c1;
+  cursor: pointer;
+  overflow: hidden;
+}
+.quanqiu .leftcontent .lunbo .slick-prev .jtL {
+  position: absolute;
+  width: 13px;
+  height: 21px;
+  top: 11px;
+  left: 5px;
+  font-size: 0;
+  background-image: url(../images/leftjiantou.png);
+}
+.quanqiu .leftcontent .lunbo .slick-prev .buttonL {
+  text-align: left;
+  position: absolute;
+  top: 13px;
+  left: 30px;
+  font-size: 14px;
+}
+.quanqiu .leftcontent .lunbo .slick-prev .buttonL span {
+  color: #f12e24;
+}
+.quanqiu .leftcontent .lunbo .slick-next {
+  width: 27px;
+  height: 43px;
+  position: absolute;
+  top: 50%;
+  margin-top: -21px;
+  right: -1px;
+  background-color: #ffffff;
+  z-index: 9999;
+  border: 1px solid #c1c1c1;
+  cursor: pointer;
+  overflow: hidden;
+}
+.quanqiu .leftcontent .lunbo .slick-next .jtR {
+  position: absolute;
+  width: 13px;
+  height: 21px;
+  top: 11px;
+  right: 5px;
+  font-size: 0;
+  background-image: url(../images/rightjiantou.png);
+}
+.quanqiu .leftcontent .lunbo .slick-next .buttonR {
+  text-align: right;
+  position: absolute;
+  top: 13px;
+  right: 30px;
+  font-size: 14px;
+}
+.quanqiu .leftcontent .lunbo .slick-next .buttonR span {
+  color: #f12e24;
+}
+.quanqiu .leftcontent .lunbo ul {
+  position: absolute;
+  bottom: 2%;
+  display: block;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  z-index: 9999;
+}
+.quanqiu .leftcontent .lunbo ul li {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 2px;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: #ccc;
+}
+.quanqiu .rightcontent {
+  float: left;
+}
+.quanqiu .rightcontent ul li {
+  float: left;
+  border: 1px solid #e8e6e6;
+  width: 220px;
+  height: 305px;
+  padding: 8px;
+  background: #ffffff;
+  margin-right: 17px;
+}
+.quanqiu .rightcontent ul li img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.guanggaopic {
+  margin: 33px auto 0 auto;
 }
 
 /*尾部样式*/

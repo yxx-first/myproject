@@ -84,6 +84,7 @@ $n:none;
         .lunbo {
             width: 100%;
             text-align: center;
+            position: relative;
             .pic {
                 img {
                     width: 100%;
@@ -152,6 +153,27 @@ $n:none;
                     span {
                         color: #f12e24;
                     }
+                }
+            }
+            ul {
+                position: absolute;
+                bottom: 2%;
+                display: block;
+                width: 100%;
+                padding: 0;
+                list-style: none;
+                text-align: center;
+                z-index: 9999;
+                li {
+                    position: relative;
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin: 0 2px;
+                    padding: 0;
+                    cursor: pointer;
+                    border-radius: 20px;
+                    background-color: #ccc;
                 }
             }
         }
@@ -224,4 +246,195 @@ $n:none;
             }
         }
     }
+}
+
+.tuangou {
+    @extend %clearfix;
+    .title {
+        font-size: 24px;
+        color: #424242;
+        padding-left: 10px;
+        padding-bottom: 13px;
+        padding-top: 20px;
+        span {
+            margin-left: 30px;
+            font-size: 16px;
+            color: #727272;
+        }
+    }
+    .leftcontent {
+        float: left;
+        width: 418px;
+        height: 321px;
+        text-align: center;
+        background-color: #ffffff;
+        border: 1px solid #e8e6e6;
+        margin-right: 20px;
+        img {
+            display: block;
+            padding-top: 10px;
+            margin: 0 auto;
+        }
+    }
+    .rightcontent {
+        float: left;
+        ul {
+            li {
+                float: left;
+                border: 1px solid #e8e6e6;
+                width: 220px;
+                height: 305px;
+                padding: 8px;
+                background: #ffffff;
+                margin-right: 17px;
+                img {
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+.quanqiu {
+    @extend %clearfix;
+    .title {
+        font-size: 24px;
+        color: #424242;
+        padding-left: 10px;
+        padding-bottom: 13px;
+        padding-top: 20px;
+        span {
+            margin-left: 30px;
+            font-size: 16px;
+            color: #727272;
+        }
+    }
+    .leftcontent {
+        float: left;
+        width: 418px;
+        height: 321px;
+        text-align: center;
+        background-color: #ffffff;
+        border: 1px solid #e8e6e6;
+        margin-right: 20px;
+        .lunbo {
+            width: 100%;
+            text-align: center;
+            position: relative;
+            .pic {
+                img {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            .slick-prev {
+                width: 27px;
+                height: 43px;
+                position: absolute;
+                top: 50%;
+                margin-top: -21px;
+                left: -1px;
+                background-color: #ffffff;
+                z-index: 9999;
+                border: 1px solid #c1c1c1;
+                cursor: pointer;
+                overflow: hidden;
+                .jtL {
+                    position: absolute;
+                    width: 13px;
+                    height: 21px;
+                    top: 11px;
+                    left: 5px;
+                    font-size: 0;
+                    background-image: url(../images/leftjiantou.png)
+                }
+                .buttonL {
+                    text-align: left;
+                    position: absolute;
+                    top: 13px;
+                    left: 30px;
+                    font-size: 14px;
+                    span {
+                        color: #f12e24;
+                    }
+                }
+            }
+            .slick-next {
+                width: 27px;
+                height: 43px;
+                position: absolute;
+                top: 50%;
+                margin-top: -21px;
+                right: -1px;
+                background-color: #ffffff;
+                z-index: 9999;
+                border: 1px solid #c1c1c1;
+                cursor: pointer;
+                overflow: hidden;
+                .jtR {
+                    position: absolute;
+                    width: 13px;
+                    height: 21px;
+                    top: 11px;
+                    right: 5px;
+                    font-size: 0;
+                    background-image: url(../images/rightjiantou.png);
+                }
+                .buttonR {
+                    text-align: right;
+                    position: absolute;
+                    top: 13px;
+                    right: 30px;
+                    font-size: 14px;
+                    span {
+                        color: #f12e24;
+                    }
+                }
+            }
+            ul {
+                position: absolute;
+                bottom: 2%;
+                display: block;
+                width: 100%;
+                padding: 0;
+                list-style: none;
+                text-align: center;
+                z-index: 9999;
+                li {
+                    position: relative;
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin: 0 2px;
+                    padding: 0;
+                    cursor: pointer;
+                    border-radius: 20px;
+                    background-color: #ccc;
+                }
+            }
+        }
+    }
+    .rightcontent {
+        float: left;
+        ul {
+            li {
+                float: left;
+                border: 1px solid #e8e6e6;
+                width: 220px;
+                height: 305px;
+                padding: 8px;
+                background: #ffffff;
+                margin-right: 17px;
+                img {
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+.guanggaopic {
+    margin: 33px auto 0 auto;
 }
