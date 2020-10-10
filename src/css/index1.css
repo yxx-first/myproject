@@ -67,7 +67,7 @@ body {
 
 /* 头部样式 */
 /* 头部Nav部分 */
-.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
+.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .live-box-down .secondmodule .secondmodule-container .productlist dd:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
   content: '';
   clear: both;
   display: block;
@@ -325,6 +325,9 @@ body {
   cursor: pointer;
   font-size: 12px;
 }
+.slidbar .floor-list .active {
+  background-color: #f12e24;
+}
 .slidbar .server {
   width: 84px;
   height: auto;
@@ -581,7 +584,7 @@ body {
   float: left;
 }
 
-.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
+.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .live-box-down .secondmodule .secondmodule-container .productlist dd:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
   content: '';
   clear: both;
   display: block;
@@ -613,6 +616,13 @@ body {
   cursor: pointer;
   line-height: 39px;
 }
+.banner .banner_left > div:hover span {
+  color: blue;
+}
+.banner .banner_left > div:hover span a {
+  text-align: underline;
+  color: blue;
+}
 .banner .banner_left > div .iconfont {
   font-size: 22px;
   position: relative;
@@ -633,6 +643,12 @@ body {
 }
 .banner .banner_left > div:nth-child(2) a {
   color: #333333;
+}
+.banner .banner_left .active {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-right: 0;
+  color: blue;
 }
 .banner .banner_left .leftnavbg {
   background-image: url(../images/leftnavbg.png);
@@ -806,14 +822,61 @@ body {
 .live-box-down {
   width: 969px;
   height: 500px;
+  position: relative;
 }
 .live-box-down .banner-lunbo {
   width: 100%;
   height: 100%;
   position: absolute;
   left: 0;
-  top: 90px;
+  top: 0px;
   z-index: 2;
+}
+.live-box-down .secondmodule {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.live-box-down .secondmodule .secondmodule-container {
+  width: 100%;
+  height: 590px;
+  position: absolute;
+  top: -90px;
+  z-index: 1;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.live-box-down .secondmodule .secondmodule-container .productlist {
+  padding: 25px 0 0 40px;
+}
+.live-box-down .secondmodule .secondmodule-container .productlist dl {
+  padding-bottom: 10px;
+}
+.live-box-down .secondmodule .secondmodule-container .productlist dt {
+  font-size: 14px;
+  color: #414040;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d9d9d9;
+}
+.live-box-down .secondmodule .secondmodule-container .productlist dd {
+  padding-bottom: 10px;
+}
+.live-box-down .secondmodule .secondmodule-container .productlist dd span {
+  float: left;
+  margin: 10px 10px 0 0;
+  font-size: 14px;
+}
+.live-box-down .secondmodule .secondmodule-container .productpic {
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .lunbo-container {
@@ -829,7 +892,9 @@ body {
   display: block;
 }
 .lunbo-container .lunbo-all-content .lunbo-all-connent-list {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .lunbo-container .lunbo-all-content .lunbo-all-connent-list .item-container {
   position: absolute;
@@ -933,7 +998,7 @@ body {
   width: 13px;
   height: 21px;
   top: 11px;
-  left: 5px;
+  right: 5px;
   font-size: 0;
   background-image: url(../images/rightjiantou.png);
 }
@@ -941,7 +1006,7 @@ body {
   text-align: left;
   position: absolute;
   top: 13px;
-  left: 30px;
+  right: 30px;
   font-size: 14px;
 }
 .lunbo-container .slick-next .slickR span {
@@ -969,12 +1034,15 @@ body {
   overflow: hidden;
   background-color: #ccc;
 }
+.lunbo-container ul .active {
+  background-color: #f22d25;
+}
 
 .left {
   float: left;
 }
 
-.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
+.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .live-box-down .secondmodule .secondmodule-container .productlist dd:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
   content: '';
   clear: both;
   display: block;
@@ -1353,7 +1421,7 @@ body {
   float: left;
 }
 
-.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
+.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .live-box-down .secondmodule .secondmodule-container .productlist dd:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
   content: '';
   clear: both;
   display: block;
@@ -1599,7 +1667,7 @@ body {
   float: left;
 }
 
-.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
+.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .live-box-down .secondmodule .secondmodule-container .productlist dd:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
   content: '';
   clear: both;
   display: block;
@@ -1772,7 +1840,7 @@ body {
   float: left;
 }
 
-.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
+.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .live-box-down .secondmodule .secondmodule-container .productlist dd:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
   content: '';
   clear: both;
   display: block;
@@ -1859,7 +1927,7 @@ body {
   float: left;
 }
 
-.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
+.container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .live-box-down .secondmodule .secondmodule-container .productlist dd:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
   content: '';
   clear: both;
   display: block;

@@ -19,6 +19,5 @@ require.config({
 
 // 加载模块
 require(['jquery'], function() {
-    require(['test']);
-    require(['lunbo']);
+    require(['index_module']);
 });
