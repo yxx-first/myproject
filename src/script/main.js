@@ -18,6 +18,7 @@ require.config({
 });
 
 // 加载模块
-require(['jquery'], function() {
+require(['jquery', 'jq_lazyload'], function() {
     require(['index_module']);
+    require(['list_module']);
 });

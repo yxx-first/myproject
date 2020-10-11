@@ -61,10 +61,6 @@ select {
   outline: none;
 }
 
-body {
-  height: 6000px;
-}
-
 /* 头部样式 */
 /* 头部Nav部分 */
 .container:after, .logo .container:after, .banner .banner_right .hplay-right .pic-right .price:after, .live-box-down .secondmodule .secondmodule-container .productlist dd:after, .zhubo:after, .tuangou:after, .quanqiu:after, .loft .loftBoxA:after, .loft .loftBoxB:after, .loft .loftBoxC:after, .loft .loftBoxD:after, .bestshop .allitem .bestshop-item .bestshop-item-bottom:after, .gfooter .footer-menu:after {
@@ -417,6 +413,21 @@ body {
   border: 3px solid #f12e24;
   position: relative;
   z-index: 100000;
+}
+.search .search_bar form {
+  position: relative;
+}
+.search .search_bar form ul {
+  position: absolute;
+  top: 37px;
+  left: -3px;
+  width: 448px;
+  background-color: #fff;
+  border: 1px solid red;
+}
+.search .search_bar form ul li {
+  font-size: 12px;
+  line-height: 35px;
 }
 .search .search_bar form input {
   float: left;

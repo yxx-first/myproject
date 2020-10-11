@@ -97,6 +97,7 @@ define([], function() {
                     }, function() {
                         _this.leftarrow.hide();
                         _this.rightarrow.hide();
+                        clearInterval(_this.timer);
                         this.timer = window.setInterval(function() {
                             _this.rightarrowclick();
                         }, 3000);
@@ -186,7 +187,39 @@ define([], function() {
                 })
 
             })
-        }()
+        }(),
+        // search: ! function() {
+        //     const search_bar = $('.search_bar form');
+        //     const search = $('.search_bar input');
+        //     const list = $('.search_bar ul');
 
+        //     function hello(data) {
+        //         console.log(data);
+        //         let arr = data.result;
+        //         let str = '';
+        //         // for (let value of arr) {
+        //         //     str += `
+        //         //         <li>${value[0]}</li>
+        //         //     `;
+        //         // }
+        //         // list.innerHTML = str;
+        //         $.each(arr, function(index, value) {
+        //             str += `<li>${value[0]}</li>`;
+        //         })
+        //         list.html(str);
+        //     }
+
+        //     search_bar.on('input propertychange', search, function() {
+        //         //随着用户的输入，数据接口发送变化。
+        //         let scriptelement = $('#scriptelement');
+        //         //如果存在上面的元素对象，带有此id名的script已经创建了。
+        //         if (scriptelement) { //如果存在script元素，删除
+        //             $('body').remove(scriptelement);
+        //         }
+        //         let cS = '';
+        //         cS += `<script id="scriptelement" src="https://suggest.taobao.com/sug?code=utf-8&q${$(this).value}&_ksTS=1600326651998_256&callback=taobao"></script>`
+        //         $('body').html(cS);
+        //     })
+        // }()
     }
 })

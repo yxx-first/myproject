@@ -399,6 +399,19 @@ $n:none;
         position: relative;
         z-index: 100000;
         form {
+            position: relative;
+            ul {
+                position: absolute;
+                top: 37px;
+                left: -3px;
+                width: 448px;
+                background-color: #fff;
+                border: 1px solid red;
+                li {
+                    font-size: 12px;
+                    line-height: 35px;
+                }
+            }
             input {
                 float: left;
                 width: 367px;
