@@ -1,7 +1,6 @@
 define([], function() {
     return {
         render: ! function() {
-            console.log(1);
             //前端传递对应的页面给后端，后端根据页面返回对应的数据。
             //注意：一开始应该渲染第一页的数据(接口)
             //约定每页的数据条数。
@@ -20,13 +19,14 @@ define([], function() {
                 url: 'http://192.168.11.55/ocj_project/php/listdata.php',
                 dataType: 'json'
             }).done(function(data) {
-                console.log(data);
                 let str = '';
                 $.each(data, function(index, value) {
-                    str += ` 
+                    str +=
+                        ` 
+                    <a href="detail.html?sid=${value.sid}">
                     <div class="item">
                     <div class="img">
-                        <a href="#"><img src="${value.url}" alt=""></a>
+                        <img class="lazy" data-original="${value.url}" alt="">
                     </div>
                     <p></p>
                     <div class="title">${value.title}</div>
@@ -38,7 +38,8 @@ define([], function() {
                         <span>加入购物车</span>
                     </div>
                 </div>
-                    `;
+                    </a>
+                    `;;
                 })
                 list.html(str);
                 $(function() {
@@ -70,21 +71,22 @@ define([], function() {
                     }).done(function(data) {
                         let str = '';
                         $.each(data, function(index, value) {
-                            str += ` 
-                            <div class="item">
-                            <div class="img">
-                                <a href="#"><img class="lazy" data-original="${value.url}" alt=""></a>
-                            </div>
-                            <p></p>
-                            <div class="title">${value.title}</div>
-                            <div class="price del_price">
-                                <span><del>${value.oldprice}</del></span> ￥
-                                <em>${value.price}</em>
-                            </div>
-                            <div class="buycar">
-                                <span>加入购物车</span>
-                            </div>
-                        </div>
+                            str +=
+                                ` 
+                                <div class="item">
+                                    <div class="img">
+                                        <img class="lazy" data-original="${value.url}" alt="">
+                                    </div>
+                                    <p></p>
+                                    <div class="title">${value.title}</div>
+                                    <div class="price del_price">
+                                        <span><del>${value.oldprice}</del></span> ￥
+                                        <em>${value.price}</em>
+                                    </div>
+                                    <div class="buycar">
+                                        <span>加入购物车</span>
+                                    </div>
+                                </div>
                             `;
                         });
                         list.html(str);
@@ -102,7 +104,6 @@ define([], function() {
 
             });
 
-            console.log($('.button'));
 
             //3.排序，排序前的数组都已经具有li元素
             // 默认

@@ -79,9 +79,12 @@ $n:none;
         .sp {
             position: relative;
             @include border(all, 1px, solid, #ccc);
+            height: 338px;
+            width: 338px;
             img {
                 display: block;
-                height: 338px;
+                width: 100%;
+                height: 100%;
             }
             .sf {
                 opacity: 0.3;
@@ -94,22 +97,37 @@ $n:none;
                 height: 100px;
             }
         }
-        .bp {
+        .bf {
             width: 550px;
             height: 550px;
             border: 1px solid #ccc;
-            @include postion(left, absolute, 350px, 0);
-            opacity: 0;
+            @include postion(left, absolute, 338px, 0);
+            display: none;
+            img {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
         }
         .pic-list {
+            position: absolute;
+            .pic-listwraper {
+                width: 340px;
+                overflow: hidden;
+            }
             ul {
-                padding-left: 20px;
+                height: 60px;
+                width: 1000px;
                 margin: 10px 0;
                 @extend %clearfix;
                 li {
                     border: 1px solid #ccc;
                     float: left;
                     margin-left: 5px;
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
                 }
             }
         }
@@ -159,7 +177,12 @@ $n:none;
             }
             dd {
                 border: 2px solid #ccc;
-                // position: relative;
+            }
+            .add:hover {
+                background-color: powderblue;
+            }
+            .sub:hover {
+                background-color: powderblue;
             }
             span {
                 display: block;

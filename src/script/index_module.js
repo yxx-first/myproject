@@ -5,7 +5,6 @@ define([], function() {
                 url: 'http://192.168.11.55/ocj_project/php/getdata.php',
                 dataType: 'json'
             }).done(function(data) {
-                console.log(data);
                 const oUl = $('.loftBoxA .loftBox-right ul');
                 let str = '';
                 $.each(data, function(index, value) {
@@ -177,6 +176,20 @@ define([], function() {
                 oModule.eq($(this).index()).css({
                     'opacity': '1',
                     'z-index': '666'
+                });
+                let _this = this;
+                oModule.hover(function() {
+                    $(this).css({
+                        'opacity': '1',
+                        'z-index': '666'
+                    })
+                    _this.addClass('active').siblings().removeClass('active');
+                }, function() {
+                    $(this).css({
+                        'opacity': '0',
+                        'z-index': '0'
+                    })
+                    _this.removeClass('active');
                 })
 
             }, function() {

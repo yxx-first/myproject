@@ -19,8 +19,12 @@ require.config({
 });
 
 // 加载模块
-require(['jquery', 'jq_lazyload'], function() {
+require(['jquery', 'jq_lazyload', 'jq_cookie'], function() {
     require(['index_module']);
-    require(['jquery.pagination'])
+    require(['jquery.pagination']);
     require(['list_module']);
+    require(['detail_module']);
+    require(['fdj']);
+    require(['product_num']);
+    require(['car_module']);
 });

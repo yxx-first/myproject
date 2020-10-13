@@ -11,7 +11,7 @@ $n:none;
 .shopcar-container {
     width: $container_width;
     margin: 0 auto;
-    background-color: pink;
+    // background-color: pink;
 }
 
 @mixin link($cl:#333, $hovercl:#666, $td:none) {
@@ -59,6 +59,7 @@ $n:none;
 }
 
 .shopcar {
+    margin-bottom: 100px;
     .cols1 {
         width: 443px;
     }
@@ -180,6 +181,9 @@ $n:none;
             }
             .fl {
                 float: left;
+                input {
+                    margin: 24px 0 0 13px;
+                }
             }
             .pic {
                 width: 60px;
@@ -187,6 +191,10 @@ $n:none;
                 float: left;
                 margin: 0 0 0 18px;
                 border: 1px solid #fff;
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
             }
             .datail {
                 float: left;
@@ -247,6 +255,10 @@ $n:none;
                     background-color: #ccc;
                     font-size: 16px;
                     float: left;
+                    &:hover {
+                        background-color: powderblue;
+                        color: orange;
+                    }
                 }
                 input {
                     width: 38px;
@@ -316,4 +328,47 @@ $n:none;
     font-size: 12px;
     font-family: Verdana, Geneva, sans-serif;
     color: #505966;
+    .footerl {
+        float: left;
+        height: 68px;
+        line-height: 68px;
+        label {
+            margin-left: 12px;
+        }
+        span {
+            margin-left: 30px;
+        }
+    }
+    .footerm {
+        text-align: center;
+        width: 170px;
+        float: right;
+        height: 68px;
+        line-height: 68px;
+        h6 {
+            line-height: 25px;
+            font-size: 12px;
+            margin-top: 5px;
+            b {
+                color: #239cdc;
+                padding-right: 5px;
+            }
+        }
+        p {
+            line-height: 36px;
+            color: #f10000;
+            font-size: 20px;
+        }
+    }
+    .footerr {
+        float: right;
+        .jsuan {
+            height: 43px;
+            width: 151px;
+            float: right;
+            background: url(../images/bg.cart.main.png) no-repeat -212px -179px;
+            cursor: pointer;
+            margin: 14px 13px 0 0;
+        }
+    }
 }
