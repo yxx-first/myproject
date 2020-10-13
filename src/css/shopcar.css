@@ -1,0 +1,269 @@
+@charset "UTF-8";
+/* shopcar部分 */
+.shopcar-container {
+  width: 1190px;
+  margin: 0 auto;
+  background-color: pink;
+}
+
+.shopcar .shopcar-header:after, .shopcar-main .shopcar-product .product-list:after, .pll .listwraper .list:after, .pll .listwraper .list .product-num:after {
+  content: '';
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.shopcar .cols1 {
+  width: 443px;
+}
+.shopcar .cols2 {
+  width: 102px;
+}
+.shopcar .cols3 {
+  width: 165px;
+  position: relative;
+  min-height: 40px;
+}
+.shopcar .cols4 {
+  width: 100px;
+}
+.shopcar .cols5 {
+  width: 115px;
+}
+.shopcar .cols6 {
+  width: 147px;
+  min-height: 40px;
+}
+.shopcar .cols7 {
+  width: 116px;
+}
+.shopcar .shopcar-header .sl {
+  float: left;
+}
+.shopcar .shopcar-header .sl .logo {
+  position: relative;
+  width: 200px;
+  height: 70px;
+  background: url(../images/bg.cart.main.png) no-repeat 0 -177px;
+}
+.shopcar .shopcar-header .sl .logo .num {
+  position: absolute;
+  color: #fff;
+  width: 37px;
+  height: 29px;
+  text-align: center;
+  top: -2px;
+  left: 76px;
+  background: url(../images/bg.cart.main.png) no-repeat 0 -250px;
+  line-height: 29px;
+  font-family: Verdana, Geneva, sans-serif;
+}
+.shopcar .shopcar-header .sr {
+  float: right;
+}
+.shopcar .shopcar-header .sr .step {
+  width: 745px;
+  height: 40px;
+  background: url(../images/bg.cart.main.png) no-repeat;
+  margin-top: 20px;
+}
+.shopcar .shopcar-title {
+  margin-top: 15px;
+}
+.shopcar .shopcar-title .blue-line {
+  width: 100%;
+  height: 5px;
+  background: url(../images/bg.cart.blue-line.gif) repeat-x;
+}
+.shopcar .shopcar-title .list {
+  height: 39px;
+  border-bottom: 1px solid #d7dfe5;
+  background: #f7f7f7;
+  font-size: 12px;
+  line-height: 39px;
+  color: #505966;
+}
+.shopcar .shopcar-title .list span {
+  float: left;
+  text-align: center;
+}
+
+.shopcar-main {
+  width: 1188px;
+  border: 1px solid #c6c9cc;
+  font-family: Verdana, Geneva, sans-serif;
+}
+.shopcar-main .shopcar-product {
+  width: 100%;
+  border-bottom: 2px solid #686868;
+}
+.shopcar-main .shopcar-product .block-title {
+  height: 40px;
+  width: 100%;
+}
+.shopcar-main .shopcar-product .block-title .block-title-left {
+  float: left;
+  width: 1072px;
+  height: 40px;
+  border-right: 1px solid #d9d9db;
+}
+.shopcar-main .shopcar-product .product-list {
+  width: 1188px;
+  height: 100%;
+}
+
+.pll {
+  width: 1072px;
+  float: left;
+  border-right: 1px solid #d6dadd;
+}
+.pll .listwraper {
+  border-top: 1px solid #ebeef0;
+  font-size: 12px;
+  color: #505966;
+}
+.pll .listwraper .list {
+  padding: 20px 0;
+  position: relative;
+}
+.pll .listwraper .list > div {
+  float: left;
+}
+.pll .listwraper .list .fl {
+  float: left;
+}
+.pll .listwraper .list .pic {
+  width: 60px;
+  height: 60px;
+  float: left;
+  margin: 0 0 0 18px;
+  border: 1px solid #fff;
+}
+.pll .listwraper .list .datail {
+  float: left;
+  min-height: 60px;
+  max-height: 90px;
+  height: auto;
+  margin-left: 12px;
+  width: 204px;
+}
+.pll .listwraper .list .datail .name {
+  line-height: 17px;
+  margin-top: 3px;
+  height: 17px;
+  width: 280px;
+  overflow: hidden;
+}
+.pll .listwraper .list .datail .name em {
+  display: block;
+  float: left;
+  width: 57px;
+  height: 17px;
+  margin-right: 5px;
+  background: url(../images/bg.cart.tv-icon.png) no-repeat;
+}
+.pll .listwraper .list .datail .info {
+  margin-top: 5px;
+  color: #84878c;
+}
+.pll .listwraper .list .datail img {
+  width: 30px;
+  height: auto;
+  margin-top: 6px;
+}
+.pll .listwraper .list .product-jf {
+  margin: 25px 0 6px 15px;
+}
+.pll .listwraper .list .product-jf span {
+  float: left;
+  padding-left: 16px;
+  background: url(../images/bg.icon.2.1.gif) no-repeat;
+  line-height: 12px;
+}
+.pll .listwraper .list .price {
+  top: 22px;
+  color: #505968;
+  text-align: center;
+}
+.pll .listwraper .list .product-num {
+  margin-top: 18px;
+  margin-left: 8px;
+}
+.pll .listwraper .list .product-num span {
+  display: block;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  background-color: #ccc;
+  font-size: 16px;
+  float: left;
+}
+.pll .listwraper .list .product-num input {
+  width: 38px;
+  border: 0;
+  outline: 0;
+  height: 25px;
+  padding: 0;
+  float: left;
+  text-align: center;
+}
+.pll .listwraper .list .price-total {
+  text-align: center;
+  margin-top: 20px;
+}
+.pll .listwraper .list .buy-del {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 25px;
+  right: -35px;
+}
+.pll .listwraper .list .buy-now {
+  display: block;
+  width: 81px;
+  height: 33px;
+  background: url(../images/bg.cart.main.png) no-repeat 0 -355px;
+}
+.pll .listwraper .list .del {
+  padding-left: 18px;
+  background: url(../images/bg.cart.icons.png) no-repeat;
+  background-position: 0 -23px;
+}
+
+.plr {
+  display: block;
+  float: left;
+  text-align: center;
+  width: 114px;
+  height: 100%;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.keepshop {
+  margin-top: 10px;
+  height: 40px;
+}
+.keepshop a {
+  width: 101px;
+  height: 33px;
+  float: left;
+  background: url(../images/bg.cart.main.png) no-repeat -168px -354px;
+  cursor: pointer;
+}
+
+.shopcar-footer {
+  margin: 10px auto 0;
+  background: #f9f9f9;
+  width: 1188px;
+  height: 68px;
+  border: 1px solid #d7dfe5;
+  border-bottom-color: #9caebb;
+  font-size: 12px;
+  font-family: Verdana, Geneva, sans-serif;
+  color: #505966;
+}
+
+/*# sourceMappingURL=shopcar.css.map */

@@ -5,7 +5,7 @@
   margin: 0 auto;
 }
 
-.list-container .shop-list:after, .shop-list-left .shop-list-hot .list-item .img img:after, .shop-list-right .layer-inner:after, .shop-list-right .shop-list-bar:after, .page:after, .page .page-container:after {
+.list-container .shop-list:after, .shop-list-left .shop-list-hot .list-item .img img:after, .shop-list-right .layer-inner:after, .shop-list-right .shop-list-bar:after {
   content: '';
   clear: both;
   display: block;
@@ -20,7 +20,7 @@
 
 .list {
   margin-top: 30px;
-  padding-bottom: 100px;
+  padding-bottom: 20px;
 }
 
 .shop-list-left {
@@ -133,6 +133,12 @@
   padding-right: 23px;
   background: url(../images/bg.icon.4.4.gif) right center no-repeat;
 }
+.shop-list-right .shop-list-bar .shop-list-bar-left .button:nth-child(2) em a {
+  background: url(../images/bg.icon.4.3.gif) right center no-repeat;
+}
+.shop-list-right .shop-list-bar .shop-list-bar-left .button:last-child em a {
+  background: url(../images/bg.icon.4.4.gif) right center no-repeat;
+}
 
 .render-list {
   padding: 10px 0 20px 10px;
@@ -207,56 +213,8 @@
   text-align: center;
 }
 
-.page {
-  font-size: 14px;
-  position: absolute;
-  bottom: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  text-align: center;
-}
-.page .page-container {
-  display: inline-block;
-}
-.page .page-math {
-  float: left;
-}
-.page .page-math ul > li:first-child {
-  width: 58px;
-  margin-right: 5px;
-}
-.page .page-math ul > li:last-child {
-  width: 58px;
-  margin-left: 5px;
-}
-.page .page-math ul li {
-  float: left;
-  width: 35px;
-  height: 35px;
-  margin-right: 2px;
-  line-height: 35px;
-  text-align: center;
-  border: 1px solid #dfdfdf;
-}
-.page .page-count {
-  float: left;
-  height: 37px;
-  margin: 0 15px 0 30px;
-  line-height: 37px;
-}
-.page .page-form {
-  float: left;
-  height: 37px;
-  line-height: 37px;
-}
-.page .page-form span {
-  width: 43px;
-  height: 22px;
-  border: 1px solid #DEDEDE;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 5px 0 5px;
+.footer-top {
+  padding-top: 50px;
 }
 
 /*# sourceMappingURL=list.css.map */

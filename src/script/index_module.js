@@ -13,7 +13,7 @@ define([], function() {
                       <li>
                     <div class="loftBox-right-pic">
                         <a href="#">
-                            <img src="${value.picurl}" alt="">
+                            <img class="lazy" data-original="${value.picurl}" alt="">
                         </a>
                     </div>
                     <div class="loftBox-right-title">

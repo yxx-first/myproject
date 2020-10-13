@@ -19,18 +19,19 @@
         cS.src = 'https://suggest.taobao.com/sug?code=utf-8&q=' + this.value + '&_ksTS=1600326651998_256&callback=hello';
         cS.id = 'scriptelement';
         document.body.appendChild(cS);
-    };
 
-    function hello(data) {
-        console.log(data);
-        let arr = data.result;
-        let str = '';
-        for (let value of arr) {
-            str += `
-            <li>${value[0]}</li>
-        `;
+        function hello(data) {
+            console.log(data);
+            let arr = data.result;
+            let str = '';
+            for (let value of arr) {
+                str += `
+                <li>${value[0]}</li>
+            `;
+            }
+            list.innerHTML = str;
         }
-        list.innerHTML = str;
-    }
+
+    };
 
 }();
