@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/* registry部分 */
+.container {
+  width: 1190px;
+  margin: 0 auto;
+}
+
+.registry .registry-main:after {
+  content: '';
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.registry .registry-title {
+  background-color: #239cdc;
+  height: 70px;
+}
+.registry .registry-title ul {
+  margin-left: 57px;
+  padding-top: 10px;
+}
+.registry .registry-title ul .active {
+  background-color: #f7f7f7;
+  color: #676767;
+}
+.registry .registry-title ul li:nth-child(3) {
+  margin-left: 190px;
+  font-size: 12px;
+}
+.registry .registry-title li {
+  float: left;
+  font-size: 18px;
+  width: 204px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+}
+.registry .registry-main .registry-main-left {
+  background-color: #f7f7f7;
+  float: left;
+  width: 862px;
+}
+.registry .registry-main .registry-main-left .main-title {
+  width: 760px;
+  margin: 0 auto;
+  border-bottom: 1px dotted #666666;
+  padding: 12px 0;
+}
+.registry .registry-main .registry-main-left .main-content {
+  padding-left: 130px;
+  padding-top: 30px;
+}
+.registry .registry-main .registry-main-left .main-content form {
+  width: 450px;
+  height: 600px;
+}
+.registry .registry-main .registry-main-left .main-content div {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  line-height: 45px;
+  margin-top: 10px;
+  background-color: #fff;
+}
+.registry .registry-main .registry-main-left .main-content div dt {
+  float: left;
+  width: 100px;
+  text-align: right;
+  height: 45px;
+}
+.registry .registry-main .registry-main-left .main-content div dd {
+  float: left;
+  margin-left: 30px;
+}
+.registry .registry-main .registry-main-left .main-content dd input {
+  height: 47px;
+  width: 314px;
+  border: 0;
+  outline: 0;
+  text-indent: 10px;
+}
+.registry .registry-main .registry-main-left .main-content dt select {
+  height: 47px;
+  font-size: 16px;
+  line-height: 47px;
+  border: 0;
+  text-align: right;
+  outline: 0;
+}
+.registry .registry-main .registry-main-left .main-content .phone dd {
+  border-left: 1px solid #ccc;
+  width: 313px;
+}
+.registry .registry-main .registry-main-left .main-content p {
+  font-size: 12px;
+  padding-left: 20px;
+  height: 15px;
+  line-height: 15px;
+}
+.registry .registry-main .registry-main-left .main-content .submit input {
+  width: 100%;
+  height: 47px;
+  background-color: red;
+  border: 0;
+  outline: 0;
+}
+.registry .registry-main .registry-main-left .main-content .submit {
+  border: 0;
+}
+.registry .registry-main .registry-main-left .main-content #phonecode span {
+  position: absolute;
+  background-color: #ccc;
+  right: 0px;
+  top: 2px;
+  font-size: 12px;
+  padding: 0 15px;
+}
+.registry .registry-main .registry-main-left .main-content #code span {
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  padding: 1px 15px;
+  right: 0px;
+  top: 0px;
+  width: 60px;
+  height: 50px;
+  text-align: center;
+}
+.registry .registry-main .registry-main-right {
+  float: left;
+  width: 328px;
+  height: 665px;
+  background-color: skyblue;
+}
+.registry .registry-main .registry-main-right .pic {
+  padding: 40px 0 30px 0;
+  text-align: center;
+}
+.registry .registry-main .registry-main-right .pic .erweima h3 {
+  margin: 10px 0;
+  color: #0e4971;
+  font-size: 14px;
+  font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+}
+.registry .registry-main .registry-main-right .pic .erweima p {
+  text-align: center;
+  color: #0e4971;
+  font-size: 14px;
+  font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+  margin: 10px 0;
+  text-align: center;
+  color: #0e4971;
+  font-size: 14px;
+  font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif;
+  margin: 10px 0;
+}
+
+/*# sourceMappingURL=registry.css.map */

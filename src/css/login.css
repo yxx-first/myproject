@@ -1,0 +1,66 @@
+@charset "UTF-8";
+/* login部分 */
+.login-container {
+  width: 1110px;
+  margin: 0 auto;
+}
+
+.login .login-wraper:after {
+  content: '';
+  clear: both;
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.login input {
+  width: 270px;
+  height: 35px;
+  text-align: left;
+  padding-left: 10px;
+}
+.login .login-left {
+  float: left;
+}
+.login .login-right {
+  float: left;
+  width: 360px;
+  margin-left: 60px;
+}
+.login .login-right fieldset {
+  padding: 50px;
+  box-sizing: border-box;
+  border: 5px solid #f7f7f7;
+}
+.login .login-right div {
+  height: 60px;
+  margin-bottom: 20px;
+}
+.login .login-right div h3 {
+  font-size: 14px;
+  font-weight: bolder;
+  margin-bottom: 6px;
+}
+.login .login-right .rember {
+  height: 30px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+.login .login-right .rember .rember-zc {
+  margin-left: 10px;
+}
+.login .login-right .rember .rember-zc a {
+  color: #0080c6;
+}
+.login .login-right .rember input {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.login .login-wraper {
+  width: 870px;
+  margin-left: 95px;
+  padding: 50px 0 70px 0;
+}
+
+/*# sourceMappingURL=login.css.map */

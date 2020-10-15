@@ -280,6 +280,10 @@ $n:none;
                 position: absolute;
                 top: 25px;
                 right: -35px;
+                .del:hover {
+                    color: #239CDC;
+                    text-decoration: underline;
+                }
             }
             .buy-now {
                 display: block;
@@ -337,6 +341,12 @@ $n:none;
         }
         span {
             margin-left: 30px;
+        }
+        .clearallcar:hover {
+            a {
+                color: #239CDC;
+            }
+            text-decoration: underline;
         }
     }
     .footerm {

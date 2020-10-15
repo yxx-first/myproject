@@ -85,7 +85,7 @@ define([], function() {
                     arrnum[index] = num + parseInt($('#count').val()); //原来的数量+新添加数量进行赋值
                     $.cookie('cookienum', arrnum, { expires: 10, path: '/' }); //一起存入cookie
                 }
-                alert('按钮被点击了');
+                alert('已加入购物车');
             });
 
             //4.2.购物车列表获取数据，进行渲染 - cart.html -> 取(渲染)

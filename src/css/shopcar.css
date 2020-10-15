@@ -233,6 +233,10 @@
   top: 25px;
   right: -35px;
 }
+.pll .listwraper .list .buy-del .del:hover {
+  color: #239CDC;
+  text-decoration: underline;
+}
 .pll .listwraper .list .buy-now {
   display: block;
   width: 81px;
@@ -288,6 +292,12 @@
 }
 .shopcar-footer .footerl span {
   margin-left: 30px;
+}
+.shopcar-footer .footerl .clearallcar:hover {
+  text-decoration: underline;
+}
+.shopcar-footer .footerl .clearallcar:hover a {
+  color: #239CDC;
 }
 .shopcar-footer .footerm {
   text-align: center;

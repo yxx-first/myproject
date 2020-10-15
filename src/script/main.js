@@ -27,4 +27,9 @@ require(['jquery', 'jq_lazyload', 'jq_cookie'], function() {
     require(['fdj']);
     require(['product_num']);
     require(['car_module']);
+    require(['registry_tab']);
 });
+require(['ajax']);
+require(['registry_check']);
+require(['registry_data']);
+require(['cookie']);

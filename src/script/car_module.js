@@ -16,6 +16,7 @@ define([], function() {
                     url: 'http://192.168.11.55/ocj_project/php/listdata.php',
                     dataType: 'json'
                 }).done(function(data) {
+                    console.log(data);
                     $.each(data, function(index, value) {
                         if (value.sid == sid) { //数据接口的sid和当前商品的sid进行比较，如果相等，直接赋值。
                             let strhtml = '';
@@ -28,8 +29,8 @@ define([], function() {
                                             <div class="fl">
                                                 <input type="checkbox" checked>
                                             </div>
-                                            <div class="pic">
-                                                <a href=""><img src="${value.url}" alt=""></a>
+                                            <div class="pic" sid="${value.sid}">
+                                                <a href=""><img src="${value.url} " alt=""></a>
                                             </div>
                                             <div class="datail">
                                                 <p class="name">
@@ -120,6 +121,7 @@ define([], function() {
                 $('.product-list:visible').find(':checkbox').prop('checked', $(this).prop('checked'));
                 // $('.allselect').prop('checked', $(this).prop('checked'));
                 calcprice(); //计算总价
+
             });
             let $inputs = $('.product-list:visible').find(':checkbox');
             $('.shopcar-product').on('change', $inputs, function() {
@@ -135,19 +137,18 @@ define([], function() {
 
             //5.数量的改变
             // 按钮加
-            $('.product-num .add').on('click', function() {
+            $('.shopcar-product').on('click', '.add', function() {
                 console.log(1);
                 let $num = $(this).parents('.product-num').find('input').val();
                 $num++;
                 $(this).parents('.product-num').find('input').val($num);
 
-                $(this).parents('.product-list').find('.footerm p em').html(calcsingleprice($(this)));
+                $(this).parents('.product-list').find('.price-total b').html(calcsingleprice($(this)));
                 calcprice(); //计算总价
                 setcookie($(this));
             });
-
             // 按钮减
-            $('.product-num .sub').on('click', function() {
+            $('.shopcar-product').on('click', '.sub', function() {
                 console.log(2);
                 let $num = $(this).parents('.product-num').find('input').val();
                 $num--;
@@ -155,19 +156,19 @@ define([], function() {
                     $num = 1;
                 }
                 $(this).parents('.product-num').find('input').val($num);
-                $(this).parents('.product-list').find('.footerm p em').html(calcsingleprice($(this)));
+                $(this).parents('.product-list').find('.price-total b').html(calcsingleprice($(this)));
                 calcprice(); //计算总价
                 setcookie($(this));
             });
 
             // 输入框改变
-            $('.product-num input').on('input', function() {
+            $('.shopcar-product').on('change', '.product -num input ', function() {
                 let $reg = /^\d+$/g; //只能输入数字
                 let $value = $(this).val();
                 if (!$reg.test($value)) { //不是数字
                     $(this).val(1);
                 }
-                $(this).parents('.product-list').find('.footerm p em').html(calcsingleprice($(this)));
+                $(this).parents('.product-list').find('.price-total b').html(calcsingleprice($(this)));
                 calcprice(); //计算总价
                 setcookie($(this));
             });
@@ -180,62 +181,63 @@ define([], function() {
             }
 
 
-            // //将改变后的数量存放到cookie中
-            // let arrsid = []; //存储商品的编号。
-            // let arrnum = []; //存储商品的数量。
-            // function cookietoarray() {
-            //     if (jscookie.get('cookiesid') && jscookie.get('cookienum')) {
-            //         arrsid = jscookie.get('cookiesid').split(','); //获取cookie 同时转换成数组。[1,2,3,4]
-            //         arrnum = jscookie.get('cookienum').split(','); //获取cookie 同时转换成数组。[12,13,14,15]
-            //     } else {
-            //         arrsid = [];
-            //         arrnum = [];
-            //     }
-            // }
+            //将改变后的数量存放到cookie中
+            let arrsid = []; //存储商品的编号。
+            let arrnum = []; //存储商品的数量。
+            function cookietoarray() {
+                if (getcookie('cookiesid') && getcookie('cookienum')) {
+                    arrsid = getcookie('cookiesid').split(','); //获取cookie 同时转换成数组。[1,2,3,4]
+                    arrnum = getcookie('cookienum').split(','); //获取cookie 同时转换成数组。[12,13,14,15]
+                } else {
+                    arrsid = [];
+                    arrnum = [];
+                }
+            }
 
-            // function setcookie(obj) {
-            //     cookietoarray();
-            //     let $sid = obj.parents('.goods-item').find('img').attr('sid');
-            //     arrnum[$.inArray($sid, arrsid)] = obj.parents('.goods-item').find('.quantity-form input').val();
-            //     jscookie.add('cookienum', arrnum, 10);
-            // }
+            function setcookie(obj) {
+                cookietoarray();
+                let $sid = obj.parents('.product-list').find('.pic').attr('sid');
+                arrnum[$.inArray($sid, arrsid)] = obj.parents('.product-list').find('.product-num  input').val();
+                addcookie('cookienum', arrnum, 10);
+            }
 
 
-            // //6.删除
-            // function delcookie(sid, arrsid) { //sid:当前删除的sid  arrsid:存放sid的数组[3,5,6,7]
-            //     let $index = -1; //删除的索引位置
-            //     $.each(arrsid, function(index, value) {
-            //         if (sid === value) {
-            //             $index = index;
-            //         }
-            //     });
-            //     arrsid.splice($index, 1);
-            //     arrnum.splice($index, 1);
 
-            //     jscookie.add('cookiesid', arrsid, 10);
-            //     jscookie.add('cookienum', arrnum, 10);
-            // }
-            // $('.b-action a').on('click', function() {
-            //     cookietoarray();
-            //     if (window.confirm('你确定要删除吗?')) {
-            //         $(this).parents('.goods-item').remove();
-            //         delcookie($(this).parents('.goods-item').find('img').attr('sid'), arrsid);
-            //         calcprice(); //计算总价
-            //     }
-            // });
+            //6.删除
+            function delcookie(sid, arrsid) { //sid:当前删除的sid  arrsid:存放sid的数组[3,5,6,7]
+                let $index = -1; //删除的索引位置
+                $.each(arrsid, function(index, value) {
+                    if (sid === value) {
+                        $index = index;
+                    }
+                });
+                arrsid.splice($index, 1);
+                arrnum.splice($index, 1);
 
-            // $('.operation a').on('click', function() {
-            //     cookietoarray();
-            //     if (window.confirm('你确定要全部删除吗?')) {
-            //         $('.goods-item:visible').each(function() {
-            //             if ($(this).find(':checkbox').is(':checked')) { //判断复选框是否选中
-            //                 $(this).remove();
-            //                 delcookie($(this).find('img').attr('sid'), arrsid);
-            //             }
-            //         });
-            //         calcprice(); //计算总价
-            //     }
-            // });
+                addcookie('cookiesid', arrsid, 10);
+                addcookie('cookienum', arrnum, 10);
+            }
+            $('.shopcar-product').on('click', '.buy-del .del', function() {
+                cookietoarray();
+                if (window.confirm('你确定要删除吗?')) {
+                    $(this).parents('.product-list').remove();
+                    delcookie($(this).parents('.product-list').find('.pic').attr('sid'), arrsid);
+                    calcprice(); //计算总价
+                }
+            });
+
+            $('.clearallcar').on('click', function() {
+                cookietoarray();
+                if (window.confirm('你确定要清空购物车吗?')) {
+                    $('.product-list:visible').each(function() {
+                        if ($(this).find(':checkbox').is(':checked')) { //判断复选框是否选中
+                            $(this).remove();
+                            delcookie($(this).find('.pic').attr('sid'), arrsid);
+                        }
+                    });
+                    calcprice(); //计算总价
+                }
+            });
 
         }()
     }
